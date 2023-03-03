@@ -18,6 +18,7 @@ galleryItems.forEach(element => {
     const galleryImage = document.createElement('img')
     galleryImage.className = 'gallery__image'
     galleryImage.src = element.preview;
+    
     galleryImage.setAttribute('data-source', element.original)
     galleryImage.alt = element.description;
 
@@ -30,9 +31,10 @@ gallery.append(...items);
 
 gallery.addEventListener('click', e => {
     e.preventDefault();
+    
     if (e.target.nodeName !== 'IMG') {
         return
-    }
+    };
 
     const selectedImage = e.target.getAttribute('data-source')
 
@@ -43,8 +45,9 @@ gallery.addEventListener('click', e => {
     instance.show()
     
     gallery.addEventListener('keydown', e => {
+        
         if (e.key === 'Escape') {
             instance.close()
-        }
+        };
     })
 });

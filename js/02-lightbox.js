@@ -23,6 +23,6 @@ galleryItems.forEach(element => {
 
 gallery.append(...items);
 
-const lightbox = new SimpleLightbox('.gallery a', {
+const lightBox = new SimpleLightbox('.gallery a', {
     captionDelay: 250
 });
